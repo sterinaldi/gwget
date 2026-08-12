@@ -1,0 +1,43 @@
+[build-system]
+requires = [
+    "setuptools>=42",
+    ]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+packages = ['gwget']
+
+[project]
+name = 'GWget'
+description = 'Automatic downloader of LVK GW posterior samples and injections from Zenodo'
+version = '0.0.0'
+requires-python = '>= 3.10'
+readme = {file = "README.md", content-type = "text/markdown"}
+license = {file = "LICENSE"}
+keywords = ['GW', 'gravitational waves', 'LVK', 'zenodo', 'samples']
+authors = [
+  {name = "Stefano Rinaldi", email = "stefano.rinaldi@uni-heidelberg.de"},
+  ]
+
+classifiers = [
+  "Development Status :: 5 - Production/Stable",
+  "Intended Audience :: Science/Research",
+  "License :: OSI Approved :: MIT License",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  'Topic :: Scientific/Engineering :: Astronomy',
+  'Topic :: Scientific/Engineering :: Physics',
+]
+
+dependencies = [
+    "zenodo-get > 3.0.1",
+    ]
+
+[project.urls]
+Repository = "https://github.com/sterinaldi/gwget.git"
+Issues = "https://github.com/sterinaldi/gwget/issues"
+
+[project.scripts]
+gwget   = "gwget.gwget:get_data"
+makecat = "gwget.gwget:make_symlink_cat"
